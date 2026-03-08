@@ -1,0 +1,24 @@
+#cloud-config
+
+# https://docs.cloud-init.io/en/latest/reference/examples.html
+
+groups:
+  - zac
+
+users:
+  - default
+  - name: zac
+    primary_group: zac
+    groups: sudo
+    # mkpasswd --method=SHA-512 --rounds=4096
+    passwd: '$6$rounds=4096$Ypr8j8uagcZNyE5u$H8UztJlUoeGU1tETBR.OVFj5YfmL08yYrhuWAlPPJxXA.WHHet56I8rIzTah5LqhNylo8ZRPR/YSlliKVZcdV1'
+    lock_passwd: false
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDaDCYQ4VZiG+piPtB7fyLTJptSFyEMkM5VDCNEjnl4ladAKB6j3i9c8e7fmGirXZMdX92iB5/UmB8c6cHKjf7GShnLBDE477MSFOBlFic9HDDD67h92Z9WVgQG5d3TqH+sWc++UZiXy1wT5SjZuvrk+hdmBKtBdK2EwbxVO4gJ01eW46Pwbs2eIEgR1EGe69uBqW92voCyQ3s3H+wxviwSK/wmo3zBPhDZ7dE35m8TCNIc4DGYe/JcHv9ZIDkDyQjx1SGsfKhmL4oNjfFoDs7NBciOGIaYEj0NT/H7+TEjplM+lqMpG9TJ9d5eqYyM9c/cGqkJVK+nBYqLmV7eFkEiXQCUGHksXuBzumIeyyl5XFfR3Y9fNRL7oiIYstnfdEXEdocHI2RaeMAkijuFjLMlZnfa0/ocMSbO6NMvhIDo8ZNqY5lsEIZPCK02EEV9aOVEKnX2ulpGr1bOzlV2Xxwo/Okj2X+YB57+eg1/GdOrloJy0yG8bUsgUN0IabnPGlwU8dgW3hXT9aRrYTB8/z99+y7umV8zj4Swk1jnpdlKurAD6ZLoSbeV2IOlYA5yBNEbe0NxHg6K8Cl7JXhVO5JFPaYLWGEpbSE8OWIey4EZSLqHXVSYmltWD6T/wB1X+A2wdO6mlVct1uL/3pc2XAU+7s6O8MOfUA1XEpMQ0ZsNLQ== zac@zac (Fedora)
+
+packages:
+  - cmatrix
+  - bash-completion
+
