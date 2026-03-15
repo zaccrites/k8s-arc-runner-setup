@@ -1,0 +1,2 @@
+server: https://{{ hostvars["k8s-node-01"].ansible_host }}:9345
+token: {{ hostvars["k8s-node-01"].rke2_server_node_token }}
