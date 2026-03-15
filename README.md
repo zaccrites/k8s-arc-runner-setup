@@ -19,7 +19,9 @@ See https://github.com/zaccrites/github-runner-test-repo for example usage of th
 
 1. Create a DigitalOcean [personal access token](https://cloud.digitalocean.com/account/api/tokens)
    with the `droplet` scope.
+2. Add your SSH key to your DigitalOcean profile to use to login to the droplets later.
 2. Create the file `terraform/credentials` and add your DigitalOcean token, following the example.
+3. Replace references to SSH keys in the terraform config to your own uploaded SSH key name.
 3. Run `setup.sh` to create the DigitalOcean droplets and provision the Kubernetes cluster.
 
 ## Install ARC
