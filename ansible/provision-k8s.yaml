@@ -1,0 +1,10 @@
+
+- hosts: control_nodes
+  remote_user: root
+  roles:
+    - rke2-server
+
+- hosts: worker_nodes
+  remote_user: root
+  roles:
+    - rke2-agent

@@ -1,2 +1,2 @@
-disks/
-*.img
+# Copied from the rke2-server node
+rke2_kubeconfig.yaml
